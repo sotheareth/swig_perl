@@ -122,10 +122,10 @@
 		const char * name = $1[i].getName().c_str();
 		//SV* perlval1 = newSVpvn(name, l);  // this is not working
 		SV* perlval1 = newSVpv(name, l);
-		hv_store(rh, "name", 0, perlval1, 0);
+		hv_store(rh, "name", 4, perlval1, 0);
 		
 		SV* t_data = newSViv($1[i].getAge());
-		hv_store(rh, "age", 0, t_data, 0);
+		hv_store(rh, "age", 3, t_data, 0);
 		
 		av_push(results, newRV_inc((SV *)rh));
 	}
